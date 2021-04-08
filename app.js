@@ -12,9 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function toggleClasses(element, ...classNames) {
     classNames.forEach(name => element.classList.toggle(name))
-    // for (let i = 1; i < arguments.length; i++) {
-    //   element.classList.toggle(arguments[i]);
-    // }
   }
 
   function startGame() {
@@ -35,10 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     wordList.addEventListener('click', updateGame);
   }
 
-  // function getRandomValues(array, numberOfVals) {
-  //   return shuffle(array).slice(0, numberOfVals);
-  // }
-
   const getRandomValues = (array, numVals = wordCount) => shuffle(array).slice(0, numVals)
 
   function shuffle(array) {
@@ -46,12 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let idx1 = arrayCopy.length - 1; idx1 > 0; idx1--) {
       // generate a random index between 0 and idx1 (inclusive)
       const idx2 = Math.floor(Math.random() * (idx1 + 1));
-
       // swap elements at idx1 and idx2
-      // var temp = arrayCopy[idx1];
-      // arrayCopy[idx1] = arrayCopy[idx2];
-      // arrayCopy[idx2] = temp;
-
       [arrayCopy[idx1], arrayCopy[idx2]] = [arrayCopy[idx2], arrayCopy[idx1]]
     }
     return arrayCopy;
